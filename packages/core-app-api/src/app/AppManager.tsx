@@ -74,18 +74,14 @@ import {
   AppOptions,
   BackstageApp,
   SignInPageProps,
+  CompatiblePlugin,
 } from './types';
 import { AppThemeProvider } from './AppThemeProvider';
 import { defaultConfigLoader } from './defaultConfigLoader';
 import { ApiRegistry } from '../apis/system/ApiRegistry';
 import { resolveRouteBindings } from './resolveRouteBindings';
+import { PluginDecoration } from './PluginDecoration';
 import { BackstageRouteObject } from '../routing/types';
-
-type CompatiblePlugin =
-  | BackstagePlugin<any, any>
-  | (Omit<BackstagePlugin<any, any>, 'getFeatureFlags'> & {
-      output(): Array<{ type: 'feature-flag'; name: string }>;
-    });
 
 const InternalAppContext = createContext<{
   routeObjects: BackstageRouteObject[];
@@ -161,6 +157,7 @@ class AppContextImpl implements AppContext {
 export class AppManager implements BackstageApp {
   private apiHolder?: ApiHolder;
   private configApi?: ConfigApi;
+  private pluginDecoration: PluginDecoration;
 
   private readonly apis: Iterable<AnyApiFactory>;
   private readonly icons: NonNullable<AppOptions['icons']>;
@@ -175,9 +172,14 @@ export class AppManager implements BackstageApp {
   private readonly apiFactoryRegistry: ApiFactoryRegistry;
 
   constructor(options: AppOptions) {
+    this.pluginDecoration = new PluginDecoration(options);
     this.apis = options.apis ?? [];
     this.icons = options.icons;
-    this.plugins = new Set((options.plugins as CompatiblePlugin[]) ?? []);
+    this.plugins = new Set(
+      this.pluginDecoration.decoratePlugins(
+        (options.plugins as CompatiblePlugin[]) ?? [],
+      ),
+    );
     this.components = options.components;
     this.themes = options.themes as AppTheme[];
     this.configLoader = options.configLoader ?? defaultConfigLoader;
@@ -225,7 +227,10 @@ export class AppManager implements BackstageApp {
         //               the app, rather than having to wait for the provider to render.
         //               For now we need to push the additional plugins we find during
         //               collection and then make sure we initialize things afterwards.
-        result.collectedPlugins.forEach(plugin => this.plugins.add(plugin));
+        result.collectedPlugins.forEach(plugin => {
+          this.pluginDecoration.decoratePlugin(plugin);
+          this.plugins.add(plugin);
+        });
         this.verifyPlugins(this.plugins);
 
         // Initialize APIs once all plugins are available
