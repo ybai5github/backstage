@@ -15,18 +15,6 @@
  */
 
 const mockAccess = jest.fn();
-jest.doMock('fs-extra', () => ({
-  access: mockAccess,
-  promises: {
-    access: mockAccess,
-  },
-  constants: {
-    F_OK: 0,
-    W_OK: 1,
-  },
-  mkdir: jest.fn(),
-  remove: jest.fn(),
-}));
 
 import {
   DatabaseManager,
@@ -53,6 +41,19 @@ import {
   stringifyEntityRef,
   UserEntity,
 } from '@backstage/catalog-model';
+
+jest.mock('fs-extra', () => ({
+  access: mockAccess,
+  promises: {
+    access: mockAccess,
+  },
+  constants: {
+    F_OK: 0,
+    W_OK: 1,
+  },
+  mkdir: jest.fn(),
+  remove: jest.fn(),
+}));
 
 function createDatabase(): PluginDatabaseManager {
   return DatabaseManager.fromConfig(
