@@ -14,8 +14,6 @@
  * limitations under the License.
  */
 
-const mockAccess = jest.fn();
-
 import {
   DatabaseManager,
   getVoidLogger,
@@ -42,7 +40,9 @@ import {
   UserEntity,
 } from '@backstage/catalog-model';
 
-jest.mock('fs-extra', () => ({
+const mockAccess = jest.fn();
+
+jest.doMock('fs-extra', () => ({
   access: mockAccess,
   promises: {
     access: mockAccess,
