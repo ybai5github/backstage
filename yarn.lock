@@ -5620,94 +5620,94 @@
     "@svgr/plugin-jsx" "^6.2.1"
     "@svgr/plugin-svgo" "^6.2.0"
 
-"@swc/core-android-arm-eabi@1.2.160":
-  version "1.2.160"
-  resolved "https://registry.npmjs.org/@swc/core-android-arm-eabi/-/core-android-arm-eabi-1.2.160.tgz#f5aaf852e9d104b4ad58d34851bac3bd41a64a60"
-  integrity sha512-VzFP7tYgvpkUhd8wgyNtERqvoPBBDretyMFxAxPe2SxClaBs9Ka95PdiPPZalRq+vFCb/dFxD8Vhz+XO16Kpjg==
+"@swc/core-android-arm-eabi@1.2.186":
+  version "1.2.186"
+  resolved "https://registry.npmjs.org/@swc/core-android-arm-eabi/-/core-android-arm-eabi-1.2.186.tgz#542941efac1a481c3794a19014574c5c376ab0a7"
+  integrity sha512-y+xiLOlkksP69mCQTbSJi/TvELJ+VAVCS/A8xBynnbZXyst4byaEDz0b6PpSTeFU0QufyygzlIARBBxi48RAQg==
 
-"@swc/core-android-arm64@1.2.160":
-  version "1.2.160"
-  resolved "https://registry.npmjs.org/@swc/core-android-arm64/-/core-android-arm64-1.2.160.tgz#458f7e6aff52958e0764c34500528c18bbb31894"
-  integrity sha512-m+xqQaa7TqW3Vm9MUvITtdU8OlAc/9yT+TgOS4l8WlfFI87IDnLLfinKKEp+xfKwzYDdIsh+sC+jdGdIBTMB+Q==
+"@swc/core-android-arm64@1.2.186":
+  version "1.2.186"
+  resolved "https://registry.npmjs.org/@swc/core-android-arm64/-/core-android-arm64-1.2.186.tgz#0b4cf17ea869126bfbf0a75dd1b0486bbedfb8a7"
+  integrity sha512-W7FZDXfs2b8UIsdBlyRbG8Me2L5k77nitd38LmPFzj9G67DQWhVyoCoHMx38kbsRE82GVO2LmZ28Ehrl7TQw5w==
 
-"@swc/core-darwin-arm64@1.2.160":
-  version "1.2.160"
-  resolved "https://registry.npmjs.org/@swc/core-darwin-arm64/-/core-darwin-arm64-1.2.160.tgz#34d48b449de0eae9fddd71b064d36aa5353f22cc"
-  integrity sha512-9bG70KYKvjNf7tZtjOu1h4kDZPtoidZptIXPGSHuUgJ1BbSJYpfRR5xAmq4k37+GqOjIPJp4+lSGQPa2HfejpA==
+"@swc/core-darwin-arm64@1.2.186":
+  version "1.2.186"
+  resolved "https://registry.npmjs.org/@swc/core-darwin-arm64/-/core-darwin-arm64-1.2.186.tgz#5958e85b156cea9b384cc3b9191ccf9e2aaf5e1b"
+  integrity sha512-v0aKuzZEV8zqyxrFohVzKjbbOWllgUd0Mgs8Fbft/K7Brp4QzBXvSjhOwsnNE4AlwzRLdINQfQz/RO6Ygp9H4Q==
 
-"@swc/core-darwin-x64@1.2.160":
-  version "1.2.160"
-  resolved "https://registry.npmjs.org/@swc/core-darwin-x64/-/core-darwin-x64-1.2.160.tgz#109d92457df928717c73055f01c99ca88815000d"
-  integrity sha512-+b4HdKAVf/XPZ9DjgG2axGLbquPEuYwEP3zeWgbWn0s0FYQ7WTFxznf3YrTJE9MYadJeCOs3U80E2xVAtRRS9Q==
+"@swc/core-darwin-x64@1.2.186":
+  version "1.2.186"
+  resolved "https://registry.npmjs.org/@swc/core-darwin-x64/-/core-darwin-x64-1.2.186.tgz#384af1740d262f8eeaf51bb2f4014d32867da071"
+  integrity sha512-qhwFRvjFxkgiPqpg8ifo9bN6ONlPdn0xWPnkph2rpJhByMkNW2LEIApEPgS0ePhI9gq4Wksp5oxCviH1v36gQA==
 
-"@swc/core-freebsd-x64@1.2.160":
-  version "1.2.160"
-  resolved "https://registry.npmjs.org/@swc/core-freebsd-x64/-/core-freebsd-x64-1.2.160.tgz#debdccce0129aa856e496f06981cc8e8271fcb41"
-  integrity sha512-E5agJwv+RVMoZ8FQIPSO5wLPDQx6jqcMpV207EB3pPaxPWGe4n3DH3vcibHp80RACDNdiaqo5lBeBnGJI4ithw==
+"@swc/core-freebsd-x64@1.2.186":
+  version "1.2.186"
+  resolved "https://registry.npmjs.org/@swc/core-freebsd-x64/-/core-freebsd-x64-1.2.186.tgz#438b3067b0357903875bce5b0ab16e7277d4ab8f"
+  integrity sha512-HhL4HqqShE3lCB7NWXRVjjiEN4t05usHrCBtHEADsZDAGglJRMjT9ZLGLVxGOxEziWCIR+kOV2jcMv0Bf4Bbaw==
 
-"@swc/core-linux-arm-gnueabihf@1.2.160":
-  version "1.2.160"
-  resolved "https://registry.npmjs.org/@swc/core-linux-arm-gnueabihf/-/core-linux-arm-gnueabihf-1.2.160.tgz#27669f1084c152153c017fc320b6a92cd6b71244"
-  integrity sha512-uCttZRNx+lWVhCYGC6/pGUej08g1SQc5am6R9NVFh111goytcdlPnC4jV8oWzq2QhDWkkKxLoP2CZOytzI4+0w==
+"@swc/core-linux-arm-gnueabihf@1.2.186":
+  version "1.2.186"
+  resolved "https://registry.npmjs.org/@swc/core-linux-arm-gnueabihf/-/core-linux-arm-gnueabihf-1.2.186.tgz#df2e4f0ff8f98ae3fa364a0c7c84988e3b5296fc"
+  integrity sha512-ouAREnVdbUnZA0y4wYdAZZKIvqJ1uer9hOCbafgGyrmR9i8Lhswz2fPUGOUc+rxjqsP1z7uN5CpMcAH4KvyNUQ==
 
-"@swc/core-linux-arm64-gnu@1.2.160":
-  version "1.2.160"
-  resolved "https://registry.npmjs.org/@swc/core-linux-arm64-gnu/-/core-linux-arm64-gnu-1.2.160.tgz#a8ecadee30639c298e9c2175099d55c1c82f912e"
-  integrity sha512-sB18roiv8m/zsY6tXLSrbUls0eKkSkxOEF0ennXVEtz97rMJ+WWnkOc8gI+rUpj3MHbVAIxyDNyyZU4cH5g1jQ==
+"@swc/core-linux-arm64-gnu@1.2.186":
+  version "1.2.186"
+  resolved "https://registry.npmjs.org/@swc/core-linux-arm64-gnu/-/core-linux-arm64-gnu-1.2.186.tgz#884b2d781f224744cf7c40cfa70d029f92016f37"
+  integrity sha512-b8GbZ2FVlQrDWyqC/KW9zScAvvUx6StLDvGAPWxD2GvFHjE0iPnvLHGvuVuhje0pFFqSwZnQ5/KZ6VyrKowPJw==
 
-"@swc/core-linux-arm64-musl@1.2.160":
-  version "1.2.160"
-  resolved "https://registry.npmjs.org/@swc/core-linux-arm64-musl/-/core-linux-arm64-musl-1.2.160.tgz#1a2cf738c8a394fcb21fe91f13b1fb9c775cca0b"
-  integrity sha512-PJ7Ukb+BRR3pGYcUag8qRWOB11eByc5YLx/xAMSc3bRmaYW/oj6s8k+1DYiR//BAuNQdf14MpMFzDuWiDEUh7A==
+"@swc/core-linux-arm64-musl@1.2.186":
+  version "1.2.186"
+  resolved "https://registry.npmjs.org/@swc/core-linux-arm64-musl/-/core-linux-arm64-musl-1.2.186.tgz#b76d88778bbe4f5fb72155ef5bb506417d8a7216"
+  integrity sha512-vWvfQiC7K2oMxuKbAWTgVVoTs7SpHb8GyecAzQbQWNIyOycLMihCXhgj99cz0GaSeEs/0SEd+FSoU+uldUysjA==
 
-"@swc/core-linux-x64-gnu@1.2.160":
-  version "1.2.160"
-  resolved "https://registry.npmjs.org/@swc/core-linux-x64-gnu/-/core-linux-x64-gnu-1.2.160.tgz#f54c4e0510b69d68f56e681050b717991627ad68"
-  integrity sha512-wVh8Q86xz3t0y5zoUryWQ64bFG/YxdcykBgaog8lU9xkFb1KSqVRE9ia7aKA12/ZtAfpJZLRBleZxBAcaCg9FQ==
+"@swc/core-linux-x64-gnu@1.2.186":
+  version "1.2.186"
+  resolved "https://registry.npmjs.org/@swc/core-linux-x64-gnu/-/core-linux-x64-gnu-1.2.186.tgz#38362067f1242ec46aff72386c07c9341b11bc27"
+  integrity sha512-lGBOQd9GZsk6JQd1teZPIirir4vpcGPFlEKaoWMHTVgb4wyU0I6sW2edoHMWu+mUugs12/JpHWh7sw+ubgZzHA==
 
-"@swc/core-linux-x64-musl@1.2.160":
-  version "1.2.160"
-  resolved "https://registry.npmjs.org/@swc/core-linux-x64-musl/-/core-linux-x64-musl-1.2.160.tgz#6f8ec092d8b65a9750faf0a2323b52f39c5bd540"
-  integrity sha512-AnWdarl9WWuDdbc2AX1w76W1jaekSCokxRrWdSGUgQytaZRtybKZEgThvJCQDrSlYQD4XDOhhVRCurTvy4JsfQ==
+"@swc/core-linux-x64-musl@1.2.186":
+  version "1.2.186"
+  resolved "https://registry.npmjs.org/@swc/core-linux-x64-musl/-/core-linux-x64-musl-1.2.186.tgz#5b21b8bb3d795b70d0f7959524152600db6d2c49"
+  integrity sha512-H6pFxBpg3R+g0DDXzs39c9A7+O/ai1Zwliwo7jwOfLu4ef/cq2xrKa0AJ22lawtU9A+4gwRCX78phf2ezjC2jw==
 
-"@swc/core-win32-arm64-msvc@1.2.160":
-  version "1.2.160"
-  resolved "https://registry.npmjs.org/@swc/core-win32-arm64-msvc/-/core-win32-arm64-msvc-1.2.160.tgz#b4f226ab86e550762b5cc83d0ebe4cf43f1a3624"
-  integrity sha512-ScL27mZRTwEIqBIv9RY34nQvyBvhosiM5Lus4dCFmS71flPcAEv7hJgy4GE3YUQV0ryGNK9NaO43H8sAyNwKVQ==
+"@swc/core-win32-arm64-msvc@1.2.186":
+  version "1.2.186"
+  resolved "https://registry.npmjs.org/@swc/core-win32-arm64-msvc/-/core-win32-arm64-msvc-1.2.186.tgz#4892a9660a0b0c467a07192d188a0ef1d86f0a44"
+  integrity sha512-B178S3J5L9Z21IBVMNCarvM6kQrxHQVtT8V7vhUgldPJ5Nc2ty7ELYvrSdtiARqKP5PacKMur+nb8XIyhoJfIw==
 
-"@swc/core-win32-ia32-msvc@1.2.160":
-  version "1.2.160"
-  resolved "https://registry.npmjs.org/@swc/core-win32-ia32-msvc/-/core-win32-ia32-msvc-1.2.160.tgz#243bb5b15eab76f4c8f004381d63c6d72a8cef68"
-  integrity sha512-e75zbWlhlyrd5HdrYzELa6OlZxgyaVpJj+c9xMD95HcdklVbmsyt1vuqRxMyqaZUDLyehwwCDRX/ZeDme//M/A==
+"@swc/core-win32-ia32-msvc@1.2.186":
+  version "1.2.186"
+  resolved "https://registry.npmjs.org/@swc/core-win32-ia32-msvc/-/core-win32-ia32-msvc-1.2.186.tgz#802800e2a76fcbe4671eb8542e06e00c8ae2f3b6"
+  integrity sha512-0VqhXRn+MVth9hdwRR/X0unT9hdUOa5Y8FRUgMm3ft/72bFSAz3E8UNYMWMtVbjuViNYJgAOPML+VE9UqN80JQ==
 
-"@swc/core-win32-x64-msvc@1.2.160":
-  version "1.2.160"
-  resolved "https://registry.npmjs.org/@swc/core-win32-x64-msvc/-/core-win32-x64-msvc-1.2.160.tgz#8708986433e891687bb4a836a683f90bc95e1fce"
-  integrity sha512-GAYT+WzYQY4sr17S21yJh4flJp/sQ62mAs6RfN89p7jIWgm0Bl/SooRl6ocsftTlnZm7K7QC8zmQVeNCWDCLPw==
+"@swc/core-win32-x64-msvc@1.2.186":
+  version "1.2.186"
+  resolved "https://registry.npmjs.org/@swc/core-win32-x64-msvc/-/core-win32-x64-msvc-1.2.186.tgz#80a44caaab3d0c88ff5453a8c6543caad75e67ee"
+  integrity sha512-T+sNpLbtg5Q1zrDIOwzRDVCKQHb4eQx8MlIk9tF74amlBLt1GKBdgRn17YAA6GrNHRw7QHaDIeCEdc5OuUztvg==
 
-"@swc/core@^1.2.160":
-  version "1.2.160"
-  resolved "https://registry.npmjs.org/@swc/core/-/core-1.2.160.tgz#d91730a5021d4c8aef87855dde11fc8931496176"
-  integrity sha512-nXoC7HA+aY7AtBPsiqGXocoRLAzzA7MV+InWQtILN7Uru4hB9+rLnLCPc3zSdg7pgnxJLa1tHup1Rz7Vv6TcIQ==
+"@swc/core@^1.2.186":
+  version "1.2.186"
+  resolved "https://registry.npmjs.org/@swc/core/-/core-1.2.186.tgz#4d096f9065e5dd87bb418cece3370ce7f1b5edfa"
+  integrity sha512-n+I0z+gIsk+rkO2/UYGLcnyI2bq0YcHFtnMynRtZ8v541luGszFLBrayd3ljnmt4mFzSPY+2gTSQgK5HNuYk5g==
   optionalDependencies:
-    "@swc/core-android-arm-eabi" "1.2.160"
-    "@swc/core-android-arm64" "1.2.160"
-    "@swc/core-darwin-arm64" "1.2.160"
-    "@swc/core-darwin-x64" "1.2.160"
-    "@swc/core-freebsd-x64" "1.2.160"
-    "@swc/core-linux-arm-gnueabihf" "1.2.160"
-    "@swc/core-linux-arm64-gnu" "1.2.160"
-    "@swc/core-linux-arm64-musl" "1.2.160"
-    "@swc/core-linux-x64-gnu" "1.2.160"
-    "@swc/core-linux-x64-musl" "1.2.160"
-    "@swc/core-win32-arm64-msvc" "1.2.160"
-    "@swc/core-win32-ia32-msvc" "1.2.160"
-    "@swc/core-win32-x64-msvc" "1.2.160"
+    "@swc/core-android-arm-eabi" "1.2.186"
+    "@swc/core-android-arm64" "1.2.186"
+    "@swc/core-darwin-arm64" "1.2.186"
+    "@swc/core-darwin-x64" "1.2.186"
+    "@swc/core-freebsd-x64" "1.2.186"
+    "@swc/core-linux-arm-gnueabihf" "1.2.186"
+    "@swc/core-linux-arm64-gnu" "1.2.186"
+    "@swc/core-linux-arm64-musl" "1.2.186"
+    "@swc/core-linux-x64-gnu" "1.2.186"
+    "@swc/core-linux-x64-musl" "1.2.186"
+    "@swc/core-win32-arm64-msvc" "1.2.186"
+    "@swc/core-win32-ia32-msvc" "1.2.186"
+    "@swc/core-win32-x64-msvc" "1.2.186"
 
-"@swc/jest@^0.2.20":
-  version "0.2.20"
-  resolved "https://registry.npmjs.org/@swc/jest/-/jest-0.2.20.tgz#2bddb4348fb730296b86cdcd96748be131b11395"
-  integrity sha512-5qSUBYY1wyIMn7p0Vl9qqV4hMI69oJwZCIPUpBsTFWN2wlwn6RDugzdgCn+bLXVYh+Cxi8bJcZ1uumDgsoL+FA==
+"@swc/jest@^0.2.21":
+  version "0.2.21"
+  resolved "https://registry.npmjs.org/@swc/jest/-/jest-0.2.21.tgz#e8c4e234016a914f4cfbb7d75844860a250c1d1c"
+  integrity sha512-/+NcExiZbxXANNhNPnIdFuGq62CeumulLS1bngwqIXd8H7d96LFUfrYzdt8tlTwLMel8tFtQ5aRjzVkyOTyPDw==
   dependencies:
     "@jest/create-cache-key-function" "^27.4.2"
 
@@ -24388,12 +24388,10 @@ swap-case@^2.0.2:
   dependencies:
     tslib "^2.0.3"
 
-swc-loader@^0.1.15:
-  version "0.1.15"
-  resolved "https://registry.npmjs.org/swc-loader/-/swc-loader-0.1.15.tgz#cb9c630ccfbb46dabc5aebc5560cced658e32992"
-  integrity sha512-cn1WPIeQJvXM4bbo3OwdEIapsQ4uUGOfyFj0h2+2+brT0k76DCGnZXDE2KmcqTd2JSQ+b61z2NPMib7eEwMYYw==
-  dependencies:
-    loader-utils "^2.0.0"
+swc-loader@^0.2.1:
+  version "0.2.1"
+  resolved "https://registry.npmjs.org/swc-loader/-/swc-loader-0.2.1.tgz#43f2d1a746cf985476ca75ecac6234c7314fd9f8"
+  integrity sha512-opJG9R5Dl+Fa0QihOZO9v6vueB+JzRhJZw+c4ZRCqUHG2RZL10eHZRHMdQoDz6bvLp7XWe7XBIMUkuWtoGfMJw==
 
 swr@^1.1.2:
   version "1.3.0"
