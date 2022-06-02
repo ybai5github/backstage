@@ -23,6 +23,7 @@ import {
   PluginFeatureFlagConfig,
 } from './types';
 import { AnyApiFactory } from '../apis';
+import { ComponentExtensions } from '../extendable-components';
 
 /**
  * @internal
@@ -32,7 +33,14 @@ export class PluginImpl<
   ExternalRoutes extends AnyExternalRoutes,
 > implements BackstagePlugin<Routes, ExternalRoutes>
 {
-  constructor(private readonly config: PluginConfig<Routes, ExternalRoutes>) {}
+  #_extensions: ComponentExtensions;
+
+  constructor(private readonly config: PluginConfig<Routes, ExternalRoutes>) {
+    this.#_extensions = [...(config.extensions ?? [])].map(extension => ({
+      ...extension,
+      plugin: this,
+    }));
+  }
 
   getId(): string {
     return this.config.id;
@@ -48,6 +56,10 @@ export class PluginImpl<
 
   get routes(): Routes {
     return this.config.routes ?? ({} as Routes);
+  }
+
+  get extensions(): ComponentExtensions {
+    return this.#_extensions;
   }
 
   get externalRoutes(): ExternalRoutes {
