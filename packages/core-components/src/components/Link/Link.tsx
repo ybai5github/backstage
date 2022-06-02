@@ -14,8 +14,12 @@
  * limitations under the License.
  */
 
-import { useAnalytics } from '@backstage/core-plugin-api';
+import {
+  createExtendableComponentForwardRef,
+  useAnalytics,
+} from '@backstage/core-plugin-api';
 import classnames from 'classnames';
+
 import MaterialLink, {
   LinkProps as MaterialLinkProps,
 } from '@material-ui/core/Link';
@@ -75,17 +79,40 @@ const getNodeText = (node: React.ReactNode): string => {
   return '';
 };
 
-/**
- * Thin wrapper on top of material-ui's Link component, which...
- * - Makes the Link use react-router
- * - Captures Link clicks as analytics events.
- */
-export const Link = React.forwardRef<any, LinkProps>(
-  ({ onClick, noTrack, ...props }, ref) => {
+export interface LinkContext {
+  to: string;
+  children: React.ReactNode;
+}
+
+export const {
+  componentRef: linkComponentRef,
+  /**
+   * This is a Link
+   */
+  Component: Link,
+} = createExtendableComponentForwardRef<LinkProps, LinkContext>({
+  Provider: ({ props, ComponentProvider, Component }) => {
+    const to = String(props.to);
+    const value: LinkContext = { to, children: props.children };
+
+    return (
+      <ComponentProvider value={value}>
+        <Component />
+      </ComponentProvider>
+    );
+  },
+  /**
+   * Thin wrapper on top of material-ui's Link component, which...
+   * - Makes the Link use react-router
+   * - Captures Link clicks as analytics events.
+   */
+  Component: ({ props: { onClick, noTrack, ...props }, value, info }) => {
+    const { to, children } = value;
+    const { ref } = info;
+
     const classes = useStyles();
     const analytics = useAnalytics();
-    const to = String(props.to);
-    const linkText = getNodeText(props.children) || to;
+    const linkText = getNodeText(children) || to;
     const external = isExternalUri(to);
     const newWindow = external && !!/^https?:/.exec(to);
 
@@ -106,7 +133,7 @@ export const Link = React.forwardRef<any, LinkProps>(
         {...props}
         className={classnames(classes.externalLink, props.className)}
       >
-        {props.children}
+        {children}
         <span className={classes.visuallyHidden}>, Opens in a new window</span>
       </MaterialLink>
     ) : (
@@ -116,7 +143,8 @@ export const Link = React.forwardRef<any, LinkProps>(
         component={RouterLink}
         onClick={handleClick}
         {...props}
+        children={children}
       />
     );
   },
-) as (props: LinkProps) => JSX.Element;
+});
