@@ -36,10 +36,15 @@ export class PluginImpl<
   #_extensions: ComponentExtensions;
 
   constructor(private readonly config: PluginConfig<Routes, ExternalRoutes>) {
-    this.#_extensions = [...(config.extensions ?? [])].map(extension => ({
-      ...extension,
-      plugin: this,
-    }));
+    this.#_extensions = Object.fromEntries(
+      Object.entries(config.extensions ?? {}).map(([name, extension]) => [
+        name,
+        {
+          ...extension,
+          plugin: this,
+        },
+      ]),
+    );
   }
 
   getId(): string {
