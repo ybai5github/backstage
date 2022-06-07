@@ -91,7 +91,7 @@ export const {
    */
   Component: Link,
 } = createExtendableComponentForwardRef<LinkProps, LinkContext>({
-  id: 'Link',
+  id: 'Link:v1',
   Provider: ({ props, Component }) => {
     const to = String(props.to);
     const value: LinkContext = { to, children: props.children };
