@@ -16,7 +16,7 @@
 
 import { RouteRef, SubRouteRef, ExternalRouteRef } from '../routing';
 import { AnyApiFactory } from '../apis/system';
-import { ComponentExtensions } from '../extendable-components';
+import { ComponentAdaptation } from '../adaptable-components/types';
 
 /**
  * Plugin extension type.
@@ -53,6 +53,7 @@ export type AnyExternalRoutes = { [name: string]: ExternalRouteRef };
 export type BackstagePlugin<
   Routes extends AnyRoutes = {},
   ExternalRoutes extends AnyExternalRoutes = {},
+  ComponentAdaptations extends Record<string, ComponentAdaptation> = {},
 > = {
   getId(): string;
   getApis(): Iterable<AnyApiFactory>;
@@ -62,7 +63,7 @@ export type BackstagePlugin<
   getFeatureFlags(): Iterable<PluginFeatureFlagConfig>;
   provide<T>(extension: Extension<T>): T;
   routes: Routes;
-  readonly extensions: ComponentExtensions | undefined;
+  readonly adaptations: ComponentAdaptations;
   externalRoutes: ExternalRoutes;
 };
 
@@ -84,11 +85,15 @@ export type PluginFeatureFlagConfig = {
 export type PluginConfig<
   Routes extends AnyRoutes,
   ExternalRoutes extends AnyExternalRoutes,
+  ComponentAdaptations extends Record<
+    string,
+    Extension<ComponentAdaptation>
+  > = {},
 > = {
   id: string;
   apis?: Iterable<AnyApiFactory>;
   routes?: Routes;
-  extensions?: ComponentExtensions;
+  adaptations?: ComponentAdaptations;
   externalRoutes?: ExternalRoutes;
   featureFlags?: PluginFeatureFlagConfig[];
 };
