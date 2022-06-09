@@ -15,7 +15,7 @@
  */
 
 import {
-  createExtendableComponentForwardRef,
+  createAdaptableForwardableComponent,
   useAnalytics,
 } from '@backstage/core-plugin-api';
 import classnames from 'classnames';
@@ -90,7 +90,7 @@ export const {
    * This is a Link
    */
   Component: Link,
-} = createExtendableComponentForwardRef<LinkProps, LinkContext>({
+} = createAdaptableForwardableComponent<LinkProps, LinkContext>({
   id: 'Link:v1',
   Provider: ({ props, Component }) => {
     const to = String(props.to);
