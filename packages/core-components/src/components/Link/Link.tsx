@@ -91,7 +91,7 @@ export const {
    */
   Component: Link,
 } = createAdaptableForwardableComponent<LinkProps, LinkContext>({
-  id: 'Link:v1',
+  id: 'link:v1',
   Provider: ({ props, Component }) => {
     const to = String(props.to);
     const value: LinkContext = { to, children: props.children };
