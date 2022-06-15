@@ -26,7 +26,9 @@
     "build-image": "docker build ../.. -f Dockerfile --tag example-backend"
   },
   "dependencies": {
+    "@backstage/backend-app-api": "^0.0.0",
     "@backstage/backend-common": "^0.14.0",
+    "@backstage/backend-plugin-api": "^0.0.0",
     "@backstage/backend-tasks": "^0.3.2",
     "@backstage/catalog-client": "^1.0.3",
     "@backstage/catalog-model": "^1.0.3",
