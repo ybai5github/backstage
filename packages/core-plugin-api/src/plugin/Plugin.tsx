@@ -22,8 +22,10 @@ import {
   AnyExternalRoutes,
   PluginFeatureFlagConfig,
   PluginInfo,
+  ExtendMetadata,
 } from './types';
 import { AnyApiFactory } from '../apis';
+import { getPluginMetadata } from './PluginMetadata';
 
 /**
  * @internal
@@ -33,11 +35,10 @@ export class PluginImpl<
   ExternalRoutes extends AnyExternalRoutes,
 > implements BackstagePlugin<Routes, ExternalRoutes>
 {
-  public readonly info: PluginInfo;
+  private deferredInfo: Promise<PluginInfo> | undefined = undefined;
+  private metadataExtender: ExtendMetadata | undefined = undefined;
 
-  constructor(private readonly config: PluginConfig<Routes, ExternalRoutes>) {
-    this.info = { links: [], ...config.info };
-  }
+  constructor(private readonly config: PluginConfig<Routes, ExternalRoutes>) {}
 
   getId(): string {
     return this.config.id;
@@ -49,6 +50,19 @@ export class PluginImpl<
 
   getFeatureFlags(): Iterable<PluginFeatureFlagConfig> {
     return this.config.featureFlags?.slice() ?? [];
+  }
+
+  getInfo(): Promise<PluginInfo> {
+    this.deferredInfo ??= getPluginMetadata(
+      this.config.info,
+      this.config.id,
+      this.metadataExtender,
+    );
+    return this.deferredInfo;
+  }
+
+  setMetadataExtender(extender: ExtendMetadata) {
+    this.metadataExtender = extender;
   }
 
   get routes(): Routes {

@@ -80,7 +80,7 @@ import { AppThemeProvider } from './AppThemeProvider';
 import { defaultConfigLoader } from './defaultConfigLoader';
 import { ApiRegistry } from '../apis/system/ApiRegistry';
 import { resolveRouteBindings } from './resolveRouteBindings';
-import { PluginDecoration } from './PluginDecoration';
+import { PluginMetadataExtender } from './PluginMetadataDecoration';
 import { BackstageRouteObject } from '../routing/types';
 
 const InternalAppContext = createContext<{
@@ -157,7 +157,7 @@ class AppContextImpl implements AppContext {
 export class AppManager implements BackstageApp {
   private apiHolder?: ApiHolder;
   private configApi?: ConfigApi;
-  private pluginDecoration: PluginDecoration;
+  private pluginMetadataExtender: PluginMetadataExtender;
 
   private readonly apis: Iterable<AnyApiFactory>;
   private readonly icons: NonNullable<AppOptions['icons']>;
@@ -172,13 +172,14 @@ export class AppManager implements BackstageApp {
   private readonly apiFactoryRegistry: ApiFactoryRegistry;
 
   constructor(options: AppOptions) {
-    this.pluginDecoration = new PluginDecoration(options);
+    this.pluginMetadataExtender = new PluginMetadataExtender(options);
     this.apis = options.apis ?? [];
     this.icons = options.icons;
     this.plugins = new Set(
-      this.pluginDecoration.decoratePlugins(
-        (options.plugins as CompatiblePlugin[]) ?? [],
-      ),
+      ((options.plugins as CompatiblePlugin[]) ?? []).map(plugin => {
+        plugin.setMetadataExtender(this.pluginMetadataExtender.extend);
+        return plugin;
+      }),
     );
     this.components = options.components;
     this.themes = options.themes as AppTheme[];
@@ -228,7 +229,7 @@ export class AppManager implements BackstageApp {
         //               For now we need to push the additional plugins we find during
         //               collection and then make sure we initialize things afterwards.
         result.collectedPlugins.forEach(plugin => {
-          this.pluginDecoration.decoratePlugin(plugin);
+          plugin.setMetadataExtender(this.pluginMetadataExtender.extend);
           this.plugins.add(plugin);
         });
         this.verifyPlugins(this.plugins);

@@ -19,6 +19,7 @@ export type {
   AnyExternalRoutes,
   AnyRoutes,
   BackstagePlugin,
+  ExtendMetadata,
   Extension,
   FeatureFlagsHooks,
   PluginConfig,

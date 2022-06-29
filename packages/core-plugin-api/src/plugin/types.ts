@@ -45,6 +45,11 @@ export type AnyRoutes = { [name: string]: RouteRef | SubRouteRef };
 export type AnyExternalRoutes = { [name: string]: ExternalRouteRef };
 
 /**
+ * Extend metadata for a plugin
+ */
+export type ExtendMetadata = (info: PluginInfo, pluginId: string) => void;
+
+/**
  * Plugin type.
  *
  * @public
@@ -59,10 +64,11 @@ export type BackstagePlugin<
    * Returns all registered feature flags for this plugin.
    */
   getFeatureFlags(): Iterable<PluginFeatureFlagConfig>;
+  getInfo(): Promise<PluginInfo>;
+  setMetadataExtender(extender: ExtendMetadata): void;
   provide<T>(extension: Extension<T>): T;
   routes: Routes;
   externalRoutes: ExternalRoutes;
-  info: PluginInfo;
 };
 
 /**
@@ -93,7 +99,10 @@ export type PluginInfoLink = {
  * @public
  */
 export type PluginInfo = {
-  packageJson?: unknown;
+  /**
+   * The raw package.json (or a subset thereof)
+   */
+  packageJson?: Record<string, unknown>;
 
   /**
    * Plugin name; defaults to `backstage.name` in package.json
@@ -129,7 +138,16 @@ export type PluginInfo = {
   role?: string;
 };
 
-export type PluginConfigInfo = Partial<PluginInfo>;
+export type LazyLoadedPackageJson = () => Promise<{
+  default: Record<string, unknown>;
+}>;
+
+export type PluginConfigInfo =
+  | Partial<PluginInfo>
+  | (Omit<Partial<PluginInfo>, 'packageJson'> & {
+      packageJson: LazyLoadedPackageJson;
+    })
+  | LazyLoadedPackageJson;
 
 /**
  * Plugin descriptor type.
