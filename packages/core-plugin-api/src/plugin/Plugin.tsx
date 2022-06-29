@@ -25,7 +25,7 @@ import {
   ExtendMetadata,
 } from './types';
 import { AnyApiFactory } from '../apis';
-import { getPluginMetadata } from './PluginMetadata';
+import { getPluginMetadata } from './plugin-metadata';
 
 /**
  * @internal
